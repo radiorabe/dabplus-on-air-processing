@@ -17,7 +17,7 @@ License:  GPLv3+
 URL:      https://github.com/radiorabe/dabplus-on-air-processing
 Source0:  https://github.com/radiorabe/dabplus-on-air-processing/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:  https://github.com/mkpascal/%{_gh_mk_lp_name}/archive/%{_gh_mk_lp_ref}.tar.gz#/%{_gh_mk_lp_name}-%{_gh_mk_lp_ref}.tar.gz
-Patch0:   mk_liquidsoap_processing-input-variable.patch
+Patch0:   https://github.com/mkpascal/%{_gh_mk_lp_name}/pull/1.patch#/%{_gh_mk_lp_name}-input-variable.patch
 
 %description
 DAB+ on air processing is the precessing chain we use to prepare and encode the
