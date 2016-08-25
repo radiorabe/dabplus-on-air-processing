@@ -5,6 +5,7 @@
 Name:     dabplus-on-air-processing
 
 Requires: liquidsoap
+Requires: fdk-aac-dabplus-odr
 Requires: %{_gh_mk_lp_name}
 
 Version:  master
@@ -38,7 +39,7 @@ cd %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}
 %install
 install -d %{buildroot}/etc/liquidsoap
 install src/dabplus-on-air-processing.liq %{buildroot}/etc/liquidsoap/
-install src/dabplus-on-air-processing.conf %{buildroot}/etc/liquidsoap/
+install dabplus-on-air-processing.conf %{buildroot}/etc/liquidsoap/
 install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/etc/liquidsoap/
 
 %files
