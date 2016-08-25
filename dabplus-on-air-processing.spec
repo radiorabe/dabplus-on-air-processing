@@ -24,7 +24,7 @@ broadcast signal for Radio Bern RaBe.
 Summary:  Broadcast Audio Processing Settings in Liquidsoap
 Requires: %{name} = %{version}-%{release}
 Requires: ladspa-tap-plugins
-Requires: ladspa-swh-
+Requires: ladspa-swh-plugins
 
 %description -n %{_gh_mk_lp_name}
 Multiband compression chain for liquidsoap. Packaged as part of %{name}.
