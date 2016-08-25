@@ -1,6 +1,8 @@
 
 %define _gh_mk_lp_name mk_liquidsoap_processing
 %define _gh_mk_lp_ref master
+# liquidsoap version
+%define _ls_version 1.2.1
 
 Name:     dabplus-on-air-processing
 
@@ -40,7 +42,8 @@ cd %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}
 install -d %{buildroot}/etc/liquidsoap
 install src/dabplus-on-air-processing.liq %{buildroot}/etc/liquidsoap/
 install dabplus-on-air-processing.conf %{buildroot}/etc/liquidsoap/
-install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/etc/liquidsoap/
+install -d %{buildroot}/usr/lib/liquidsoap/%{_ls_version}/
+install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/usr/lib/liquidsoap/%{_ls_version}/
 
 %files
 %doc README.md
@@ -50,4 +53,4 @@ install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/etc/liquidso
 %files -n %{_gh_mk_lp_name}
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/README.md
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/LICENSE
-%config /etc/liquidsoap/process.liq
+%{_libdir}/liquidsoap/%{_ls_version}/process.liq

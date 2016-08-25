@@ -28,8 +28,15 @@ input =
     safe_empty
   end
 
-# let external processor handle processing
-%include "process.liq"
+output = if enable_processor then
+  log("Audio Processor enabled", label="dabplus")
+  # let processor from lib handle processing
+  %include <process.liq>
+  output
+else
+  log("Audio Processor disabled", label="dabplus")
+  input
+end
 
 # send the processed signal to the encoder
 output.external(
