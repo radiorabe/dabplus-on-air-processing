@@ -53,4 +53,4 @@ install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/usr/lib/liqu
 %files -n %{_gh_mk_lp_name}
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/README.md
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/LICENSE
-%{_libdir}/liquidsoap/%{_ls_version}/process.liq
+/usr/lib/liquidsoap/%{_ls_version}/process.liq
