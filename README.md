@@ -45,6 +45,20 @@ systemctl enable liquidsoap@dabplus-on-air-processing
 systemctl start liquidsoap@dabplus-on-air-processing
 ```
 
+Testing
+-------
+
+You can listen to the encoded zmq frames from the encoder by muxing them and piping the results to dablin.
+
+```bash
+yum install -y odr-dabmux dablin
+
+odr-dabmux /usr/share/doc/odr-dabmux-1.0.0/example.mux | dablin -s 0x8dab
+```
+
+You'll need to remove the `comp-fu` component and its subchannel and service from the example above and you
+should work on a copy of the file. Remember to set `nbframes` to zero if you want the mux to run forever.
+
 Development
 -----------
 
