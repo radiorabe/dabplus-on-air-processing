@@ -10,7 +10,7 @@ Omnia DAB+ processor.
 
 It is written in liquidsoap and integrates [mk_liquidsoap_process from
 mkpascal](https://github.com/mkpascal/mk_liquidsoap_processing) with
-the [fdk-aac-dabplus-odr codec](https://github.com/Opendigitalradio/fdk-aac-dabplus).
+the [fdk-aac-dabplus-odr encoder](https://github.com/Opendigitalradio/fdk-aac-dabplus).
 Parts of the processing chain are inspired by [conduit](https://github.com/JamesHarrison/conduit).
 
 Requirements
