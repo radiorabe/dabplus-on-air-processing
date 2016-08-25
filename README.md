@@ -20,17 +20,32 @@ Requirements
 A working install of the [RaBe Liquidsoap distribution](http://build.opensuse.org/project/show/home:radiorabe:liquidsoap)
 or any other liquidsoap install. The examples below depend on the systemd configuration from the RaBe dist.
 
+Install
+-------
+
+RaBe DAB+ On Air Processing is packaged for CentOS7.
+
+```bash
+yum install -y epel-release
+yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+curl -o /etc/yum.repos.d/liquidsoap.repo http://download.opensuse.org/repositories/home:/radiorabe:/liquidsoap/CentOS_7/home:radiorabe:liquidsoap.repo
+curl -o /etc/yum.repos.d/dab.repo http://download.opensuse.org/repositories/home:radiorabe:streambox/CentOS_7/home:radiorabe:dab.repo
+
+yum install -y dabplus-on-air-processing
+```
+
 Usage
 -----
 
 Enable and start the processor.
 
 ```bash
-systemctl enable liquidsoap@rabe-dabplus-processor
-systemctl start liquidsoap@rabe-dabplus-processor
+systemctl enable liquidsoap@dabplus-on-air-processing
+systemctl start liquidsoap@dabplus-on-air-processing
 ```
 
 Development
 -----------
 
-This repository contains the main processing script as well as the tooling needed to package it on the openbuild service.
+This repository contains the main processing script as well as the
+tooling needed to package it on the [openbuild service](https://build.opensuse.org/project/show/home:radiorabe:liquidsoap).
