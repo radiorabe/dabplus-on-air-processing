@@ -48,4 +48,4 @@ Development
 -----------
 
 This repository contains the main processing script as well as the
-tooling needed to package it on the [openbuild service](https://build.opensuse.org/project/show/home:radiorabe:liquidsoap).
+tooling needed to package it on the [openbuild service](https://build.opensuse.org/project/show/home:radiorabe:dab).
