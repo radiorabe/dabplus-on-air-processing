@@ -1,6 +1,6 @@
 
 %define _gh_mk_lp_name mk_liquidsoap_processing
-%define _gh_mk_lp_ref master
+%define _gh_mk_lp_ref 59d14f2e07aadcc35cece0729c6d8b9d1955145c
 # liquidsoap version
 %define _ls_version 1.2.1
 
@@ -17,7 +17,6 @@ License:  GPLv3+
 URL:      https://github.com/radiorabe/dabplus-on-air-processing
 Source0:  https://github.com/radiorabe/dabplus-on-air-processing/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:  https://github.com/mkpascal/%{_gh_mk_lp_name}/archive/%{_gh_mk_lp_ref}.tar.gz#/%{_gh_mk_lp_name}-%{_gh_mk_lp_ref}.tar.gz
-Patch0:   https://github.com/mkpascal/%{_gh_mk_lp_name}/pull/1.patch#/%{_gh_mk_lp_name}-input-variable.patch
 
 %description
 DAB+ on air processing is the precessing chain we use to prepare and encode the
@@ -25,7 +24,7 @@ broadcast signal for Radio Bern RaBe.
 
 %package -n %{_gh_mk_lp_name}
 Summary:  Broadcast Audio Processing Settings in Liquidsoap
-Requires: %{name} = %{version}-%{release}
+Requires: liquidsoap
 Requires: ladspa-tap-plugins
 Requires: ladspa-swh-plugins
 
@@ -35,8 +34,6 @@ Multiband compression chain for liquidsoap. Packaged as part of %{name}.
 %prep
 %setup0
 %setup1 -T -D -a 1
-cd %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}
-%patch0 -p1
 
 %install
 install -d %{buildroot}/etc/liquidsoap
