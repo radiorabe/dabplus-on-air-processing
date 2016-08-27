@@ -10,7 +10,7 @@ end
 
 # prepare possible input
 alsa = input.alsa()
-stream = mksafe(playlist(source_stream_url))
+stream = mksafe(input.http(source_stream_url))
 safe_empty = mksafe(empty())
 
 # use configured input as input to processor
