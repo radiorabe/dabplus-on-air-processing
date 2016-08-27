@@ -30,7 +30,7 @@ yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-releas
 curl -o /etc/yum.repos.d/liquidsoap.repo \
   http://download.opensuse.org/repositories/home:/radiorabe:/liquidsoap/CentOS_7/home:radiorabe:liquidsoap.repo
 curl -o /etc/yum.repos.d/dab.repo \
-  http://download.opensuse.org/repositories/home:radiorabe:streambox/CentOS_7/home:radiorabe:dab.repo
+  http://download.opensuse.org/repositories/home:/radiorabe:/dab/CentOS_7/home:radiorabe:dab.repo
 
 yum install -y dabplus-on-air-processing
 ```
