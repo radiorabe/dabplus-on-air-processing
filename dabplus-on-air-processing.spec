@@ -10,7 +10,7 @@ Requires: liquidsoap
 Requires: fdk-aac-dabplus-odr
 Requires: %{_gh_mk_lp_name}
 
-Version:  master
+Version:  0.1.0
 Release:  1
 Summary:  Liquidsoap based DAB+ on air processing solution
 License:  GPLv3+
