@@ -15,7 +15,7 @@ Release:  1
 Summary:  Liquidsoap based DAB+ on air processing solution
 License:  GPLv3+
 URL:      https://github.com/radiorabe/dabplus-on-air-processing
-Source0:  https://github.com/radiorabe/dabplus-on-air-processing/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:  https://github.com/radiorabe/dabplus-on-air-processing/archive/v%{version}.tar.gz#/%{name}-v%{version}.tar.gz
 Source1:  https://github.com/mkpascal/%{_gh_mk_lp_name}/archive/%{_gh_mk_lp_ref}.tar.gz#/%{_gh_mk_lp_name}-%{_gh_mk_lp_ref}.tar.gz
 
 %description
