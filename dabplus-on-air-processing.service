@@ -1,0 +1,14 @@
+[Unit]
+Description=DAB+ On Air Processing
+Documentation=https://github.com/radiorabe/dabplus-on-air-processing
+Requires=liquidsoap@dabplus-on-air-processing.service
+Requires=dabplus-mot-encoder@dabplus-on-air-processing.service
+
+[Service]
+RemainAfterExit=yes
+ExecStop=/bin/echo "DAB+ On Air Processing going down."
+
+[Install]
+WantedBy=multi-user.target
+Also=liquidsoap@dabplus-on-air-processing.service
+Also=dabplus-mot-encoder@dabplus-on-air-processing.service
