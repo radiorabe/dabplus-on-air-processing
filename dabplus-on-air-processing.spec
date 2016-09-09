@@ -39,8 +39,10 @@ Multiband compression chain for liquidsoap. Packaged as part of %{name}.
 install -d %{buildroot}/etc/liquidsoap
 install src/dabplus-on-air-processing.liq %{buildroot}/etc/liquidsoap/
 install dabplus-on-air-processing.conf %{buildroot}/etc/liquidsoap/
-install -d %{buildroot}/usr/lib/liquidsoap/%{_ls_version}/
-install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/usr/lib/liquidsoap/%{_ls_version}/
+install -d %{buildroot}%{_exec_prefix}/lib/liquidsoap/%{_ls_version}/
+install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}%{_exec_prefix}/lib/liquidsoap/%{_ls_version}/
+install -d %{buildroot}%{_exec_prefix}/lib/systemd/system/
+install *.service %{buildroot}%{_exec_prefix}/lib/systemd/system/
 
 %files
 %doc README.md
@@ -50,4 +52,5 @@ install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}/usr/lib/liqu
 %files -n %{_gh_mk_lp_name}
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/README.md
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/LICENSE
-/usr/lib/liquidsoap/%{_ls_version}/process.liq
+%{_exec_prefix}/lib/liquidsoap/%{_ls_version}/process.liq
+%attr(550, -, -) %{_exec_prefix}/lib/systemd/system/*.service

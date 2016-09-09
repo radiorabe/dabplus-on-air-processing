@@ -38,12 +38,18 @@ yum install -y dabplus-on-air-processing
 Usage
 -----
 
-Enable and start the processor.
+Enable and start the processor and mot-encoder.
 
 ```bash
-systemctl enable liquidsoap@dabplus-on-air-processing
-systemctl start liquidsoap@dabplus-on-air-processing
+systemctl enable dabplus-on-air-processing
+systemctl start dabplus-on-air-processing
+
+systemctl status dabplus-on-air-processing
+systemctl status liquidsoap@dabplus-on-air-processing
+systemctl status dabplus-mot-encoder@dabplus-on-air-processing
 ```
+
+You may put slides and DL text files into `/var/tmp/mot/dabplus-on-air-processing/{slides,texts}`.
 
 Testing
 -------
