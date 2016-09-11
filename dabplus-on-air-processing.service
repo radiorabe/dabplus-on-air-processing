@@ -10,5 +10,5 @@ ExecStop=/bin/echo "DAB+ On Air Processing going down."
 
 [Install]
 WantedBy=multi-user.target
-Also=liquidsoap@dabplus-on-air-processing.service
-Also=dabplus-mot-encoder@dabplus-on-air-processing.service
+RequiredBy=liquidsoap@dabplus-on-air-processing.service
+RequiredBy=dabplus-mot-encoder@dabplus-on-air-processing.service
