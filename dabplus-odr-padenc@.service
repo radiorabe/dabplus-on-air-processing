@@ -9,7 +9,7 @@ Before=liquidsoap@dabplus-on-air-processing.service
 ExecStartPre=-/bin/mkdir -p /var/tmp/mot/%i/slides
 ExecStartPre=-/bin/mkdir -p /var/tmp/mot/%i/texts
 ExecStartPre=-/bin/mkfifo /var/tmp/mot/%i/pad.fifo
-ExecStart=/usr/bin/mot-encoder -v -c 0 -r -o /var/tmp/mot/%i/pad.fifo -t /var/tmp/mot/%i/texts -d /var/tmp/mot/%i/slides
+ExecStart=/usr/bin/odr-padenc -v -c 0 -r -o /var/tmp/mot/%i/pad.fifo -t /var/tmp/mot/%i/texts -d /var/tmp/mot/%i/slides
 User=liquidsoap
 Group=liquidsoap
 
