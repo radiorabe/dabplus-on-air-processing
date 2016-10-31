@@ -7,7 +7,8 @@
 Name:     dabplus-on-air-processing
 
 Requires: liquidsoap
-Requires: fdk-aac-dabplus-odr
+Requires: odr-audioenc
+Requires: odr-padenc
 Requires: %{_gh_mk_lp_name}
 
 Version:  0.3.0
