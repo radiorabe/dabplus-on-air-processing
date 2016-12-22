@@ -47,10 +47,11 @@ output.external(
 
 # write archive files if feature is enabled
 if enable_archive then
-  log("Archive enabled and writing to #{archive_path}", label="dabplus")
+  log("Archive enabled and writing tmp at #{archive_tmp}/#{archive_filename} with final storage at #{archive_path}", label="dabplus")
   ignore(output.file(
     archive_encoder,
-    archive_path,
+    "#{archive_tmp}/#{archive_filename}",
     reopen_when={0m0s},
+    on_close=fun(s)->system("mv #{s} #{archive_path}/"),
     output))
 end
