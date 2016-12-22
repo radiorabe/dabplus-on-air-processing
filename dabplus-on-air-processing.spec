@@ -11,7 +11,7 @@ Requires: odr-audioenc
 Requires: odr-padenc
 Requires: %{_gh_mk_lp_name}
 
-Version:  0.5.0
+Version:  0.6.0
 Release:  1
 Summary:  Liquidsoap based DAB+ on air processing solution
 License:  GPLv3+
