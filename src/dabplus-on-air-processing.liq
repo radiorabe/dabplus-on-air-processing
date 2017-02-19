@@ -29,10 +29,14 @@ input =
   end
 
 output =
-  if enable_processor then
-    log("Audio Processor enabled", label="dabplus")
+  if processor == "mk" then
+    log("mk audio processor enabled", label="dabplus")
     # let processor from lib handle processing
     %include <process.liq>
+    output
+  elsif processor == "internal" then
+    log("internal audio processor enabled", label="dabplus")
+    %include <dabplus-on-air-processing-internal-processor.liq>
     output
   else
     log("Audio Processor disabled", label="dabplus")

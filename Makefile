@@ -24,6 +24,9 @@
 
 PN        = dabplus-on-air-processing
 
+LS        = liquidsoap
+LS_VER   ?= 1.2.1
+
 PADENC_N  = odr-padenc@dabplus-on-air-processing
 
 PREFIX   ?= /usr/local
@@ -34,6 +37,8 @@ DOCDIR    = $(PREFIX)/share/doc/$(PN)
 MAN1DIR   = $(PREFIX)/share/man/man1
 UNITDIR   = $(LIBDIR)/systemd/system
 DATADIR   = $(PREFIX)/share/$(PN)
+
+LIQDIR    = $(LIBDIR)/$(LS)/$(LS_VER)
 
 all:
 
@@ -61,10 +66,12 @@ install-unit:
 	install -Dm644 systemd/$(PADENC_N).service.d/* $(UNITDIR)/$(PADENC_N).service.d/
 	@echo done.
 
-# startable liquidsoap scripts belong in etc
+# startable liquidsoap scripts belong in etc everything else in LIQDIR
 install-liq:
 	@echo installing liquidsoap files...
-	install -Dm755 src/*.liq $(ETCDIR)/liquidsoap/
+	install -Dm755 -d $(LIQDIR)
+	install -Dm644 src/lib/*.liq $(LIQDIR)/
+	install -Dm755 src/*.liq $(ETCDIR)/$(LS)/
 	@echo done.
 
 install: all install-bin install-sysconf install-man install-doc install-data install-unit install-liq

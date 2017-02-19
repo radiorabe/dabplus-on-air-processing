@@ -4,6 +4,8 @@
 # liquidsoap version
 %define _ls_version 1.2.1
 
+%define _liqdir %{_exec_prefix}/lib/liquidsoap/%{_ls_version}
+
 Name:     dabplus-on-air-processing
 
 BuildRequires: make
@@ -14,6 +16,8 @@ Requires: odr-audioenc
 Requires: odr-padenc
 Requires: %{_gh_mk_lp_name}
 %{?systemd_requires}
+
+BuildArch: noarch
 
 Version:  0.6.0
 Release:  2
@@ -41,19 +45,20 @@ Multiband compression chain for liquidsoap. Packaged as part of %{name}.
 %setup1 -T -D -a 1
 
 %install
-make install PREFIX=%{buildroot}%{_prefix} ETCDIR=%{buildroot}%{_sysconfdir}
+make install PREFIX=%{buildroot}%{_prefix} ETCDIR=%{buildroot}%{_sysconfdir} LS_VER=%{_ls_version}
 
 # mk_liquidsoap_processing is in this package for convenience and not in the makefile since it will most likely be phased out
-install -d %{buildroot}%{_exec_prefix}/lib/liquidsoap/%{_ls_version}/
-install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}%{_exec_prefix}/lib/liquidsoap/%{_ls_version}/
+install -d %{buildroot}%{_liqdir}
+install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}%{_liqdir}
 
 %files
 %doc README.md
 %config /etc/liquidsoap/dabplus-on-air-processing.liq
 %config(noreplace) /etc/liquidsoap/dabplus-on-air-processing.conf
+%attr(644, -, -) %{_unitdir}/odr-padenc@dabplus-on-air-processing.service.d/*.conf
+%{_liqdir}/%{name}*
 
 %files -n %{_gh_mk_lp_name}
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/README.md
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/LICENSE
-%{_exec_prefix}/lib/liquidsoap/%{_ls_version}/process.liq
-%attr(644, -, -) %{_unitdir}/odr-padenc@dabplus-on-air-processing.service.d/*.conf
+%{_liqdir}/process.liq
