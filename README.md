@@ -41,10 +41,6 @@ Usage
 Enable and start the processor and odr-padenc.
 
 ```bash
-systemctl enable dabplus-on-air-processing
-systemctl start dabplus-on-air-processing
-
-systemctl status dabplus-on-air-processing
 systemctl status liquidsoap@dabplus-on-air-processing
 systemctl status dabplus-odr-padenc@dabplus-on-air-processing
 ```
