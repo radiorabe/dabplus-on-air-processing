@@ -40,13 +40,19 @@ output =
   end
 
 # send the processed signal to the ODR encoder
+def map_output_args(a)
+  string.concat(["--output=", a])
+end
+output_args = string.concat(
+  separator=" ",
+  list.map(map_output_args, encoder_outputs))
 odr_encoder =  string.concat(
   separator=" ", 
   [
     encoder_bin, 
     "--input=stdin",
-    "--output=#{encoder_output}",
     "--pad-fifo=#{encoder_padenc_fifo}",
+    output_args,
     encoder_args])
 
 log("Starting ODR encoder: #{odr_encoder}", label="dabplus")
