@@ -41,8 +41,14 @@ Usage
 Enable and start the processor and odr-padenc.
 
 ```bash
-systemctl status liquidsoap@dabplus-on-air-processing
+systemctl enable dabplus-odr-padenc@dabplus-on-air-processing
+systemctl enable liquidsoap@dabplus-on-air-processing
+
+systemctl start dabplus-odr-padenc@dabplus-on-air-processing
+systemctl start liquidsoap@dabplus-on-air-processing
+
 systemctl status dabplus-odr-padenc@dabplus-on-air-processing
+systemctl status liquidsoap@dabplus-on-air-processing
 ```
 
 You may put slides and DL text files into `/var/tmp/mot/dabplus-on-air-processing/{slides,texts}`.
