@@ -49,7 +49,7 @@ systemctl status liquidsoap@dabplus-on-air-processing
 systemctl status dabplus-odr-padenc@dabplus-on-air-processing
 ```
 
-You may put slides and DL text files into `/var/tmp/mot/dabplus-on-air-processing/{slides,texts}`.
+You may put slides and DL text files into `/var/tmp/odr/dabplus-on-air-processing/{slides,texts}`.
 
 Testing
 -------
