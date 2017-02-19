@@ -12,7 +12,7 @@ Requires: odr-padenc
 Requires: %{_gh_mk_lp_name}
 
 Version:  0.6.0
-Release:  1
+Release:  2
 Summary:  Liquidsoap based DAB+ on air processing solution
 License:  GPLv3+
 URL:      https://github.com/radiorabe/dabplus-on-air-processing
@@ -48,7 +48,7 @@ install *.service %{buildroot}%{_exec_prefix}/lib/systemd/system/
 %files
 %doc README.md
 %config /etc/liquidsoap/dabplus-on-air-processing.liq
-%config /etc/liquidsoap/dabplus-on-air-processing.conf
+%config(noreplace) /etc/liquidsoap/dabplus-on-air-processing.conf
 
 %files -n %{_gh_mk_lp_name}
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/README.md
