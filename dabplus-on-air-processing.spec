@@ -56,4 +56,4 @@ install %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/process.liq %{buildroot}%{_exec_prefi
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/README.md
 %doc %{_gh_mk_lp_name}-%{_gh_mk_lp_ref}/LICENSE
 %{_exec_prefix}/lib/liquidsoap/%{_ls_version}/process.liq
-%attr(550, -, -) %{_unitdir}/odr-padenc@dabplus-on-air-processing.service.d/*.conf
+%attr(644, -, -) %{_unitdir}/odr-padenc@dabplus-on-air-processing.service.d/*.conf

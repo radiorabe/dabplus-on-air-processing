@@ -46,7 +46,7 @@ install-bin:
 install-sysconf:
 	@echo installing configuration files...
 	install -Dm755 -d $(ETCDIR)/liquidsoap/
-	install -Dm555 *.conf $(ETCDIR)/liquidsoap/
+	install -Dm644 *.conf $(ETCDIR)/liquidsoap/
 	@echo done.
 
 install-man:
@@ -58,7 +58,7 @@ install-data:
 install-unit:
 	@echo installing systemd unit files...
 	install -Dm755 -d $(UNITDIR)/$(PADENC_N).service.d
-	install -Dm550 systemd/$(PADENC_N).service.d/* $(UNITDIR)/$(PADENC_N).service.d/
+	install -Dm644 systemd/$(PADENC_N).service.d/* $(UNITDIR)/$(PADENC_N).service.d/
 	@echo done.
 
 # startable liquidsoap scripts belong in etc
