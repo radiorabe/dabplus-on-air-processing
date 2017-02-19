@@ -39,10 +39,20 @@ output =
     input
   end
 
-# send the processed signal to the encoder
+# send the processed signal to the ODR encoder
+odr_encoder =  string.concat(
+  separator=" ", 
+  [
+    encoder_bin, 
+    "--input=stdin",
+    "--output=#{encoder_output}",
+    "--pad-fifo=#{encoder_padenc_fifo}",
+    encoder_args])
+
+log("Starting ODR encoder: #{odr_encoder}", label="dabplus")
 output.external(
   wav_encoder,
-  external_encoder,
+  odr_encoder,
   output)
 
 # write archive files if feature is enabled
