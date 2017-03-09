@@ -19,7 +19,7 @@ Requires: %{_gh_mk_lp_name}
 
 BuildArch: noarch
 
-Version:  0.6.0
+Version:  0.7.0
 Release:  2
 Summary:  Liquidsoap based DAB+ on air processing solution
 License:  GPLv3+
