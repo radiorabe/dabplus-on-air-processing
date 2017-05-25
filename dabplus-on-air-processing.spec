@@ -2,7 +2,7 @@
 %define _gh_mk_lp_name mk_liquidsoap_processing
 %define _gh_mk_lp_ref 59d14f2e07aadcc35cece0729c6d8b9d1955145c
 # liquidsoap version
-%define _ls_version 1.2.1
+%define _ls_version 1.3.0
 
 %define _liqdir %{_exec_prefix}/lib/liquidsoap/%{_ls_version}
 
@@ -11,7 +11,7 @@ Name:     dabplus-on-air-processing
 BuildRequires: make
 BuildRequires: systemd
 
-Requires: liquidsoap
+Requires: liquidsoap = ${_ls_version}
 Requires: odr-audioenc
 Requires: odr-padenc
 Requires: %{_gh_mk_lp_name}
@@ -33,7 +33,7 @@ broadcast signal for Radio Bern RaBe.
 
 %package -n %{_gh_mk_lp_name}
 Summary:  Broadcast Audio Processing Settings in Liquidsoap
-Requires: liquidsoap
+Requires: liquidsoap = ${_ls_version}
 Requires: ladspa-tap-plugins
 Requires: ladspa-swh-plugins
 
