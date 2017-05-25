@@ -19,8 +19,8 @@ Requires: %{_gh_mk_lp_name}
 
 BuildArch: noarch
 
-Version:  0.7.0
-Release:  2
+Version:  0.8.0
+Release:  1
 Summary:  Liquidsoap based DAB+ on air processing solution
 License:  GPLv3+
 URL:      https://github.com/radiorabe/dabplus-on-air-processing
