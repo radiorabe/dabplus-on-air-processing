@@ -33,7 +33,7 @@ broadcast signal for Radio Bern RaBe.
 
 %package -n %{_gh_mk_lp_name}
 Summary:  Broadcast Audio Processing Settings in Liquidsoap
-Requires: liquidsoap = ${_ls_version}
+Requires: liquidsoap = %{_ls_version}
 Requires: ladspa-tap-plugins
 Requires: ladspa-swh-plugins
 
